@@ -1,0 +1,13 @@
+[package]
+name = "tryout"
+version = "0.1.0"
+authors = ["Benjamin Bollen <benjamin.bollen@seetale.com>"]
+
+# leaf = "0.1.2"
+# collenchyma = { version="0.0.7", default-features=false, features=["native"] }
+
+[dependencies]
+collenchyma = { version = "0.0.7", default-features = false }
+
+[features]
+default = ["collenchyma/native"]
