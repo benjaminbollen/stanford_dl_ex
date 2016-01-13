@@ -6,11 +6,10 @@ use co::tensor::SharedTensor;
 use co::memory::MemoryType;
 
 fn write_to_memory(mem: &mut MemoryType, data: &[f64]) {
-        if let &mut MemoryType::Native(ref mut mem) = mem {
-            let mut mem_buffer = mem.as_mut_slice::<f64>();
-            for (index, datum) in data.iter().enumerate() {
-                mem_buffer[index] = *datum;
-            }
+        let &mut MemoryType::Native(ref mut mem) = mem;
+        let mut mem_buffer = mem.as_mut_slice::<f64>();
+        for (index, datum) in data.iter().enumerate() {
+            mem_buffer[index] = *datum;
         }
 }
 
